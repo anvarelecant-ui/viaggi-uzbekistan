@@ -1,11 +1,13 @@
 /**
  * Viaggi Uzbekistan - Main Interactive Controller
- * Handles multilingual switching, route navigation, tour builder calculator,
- * accordions, and direct WhatsApp booking.
+ * Personalized for Sardor (Official Guide in Tashkent)
+ * Handles bilingual switching (IT / EN), train ticket booking concierge,
+ * Tashkent highlights tabs, interactive calculator, and WhatsApp booking.
  */
 
 document.addEventListener('DOMContentLoaded', () => {
   let currentLang = localStorage.getItem('viaggi_lang') || 'it';
+  const SARDOR_WHATSAPP = "998938850309"; // Official WhatsApp: +998 93 885 03 09
 
   // 1. Language Initialization & Translation Engine
   function applyLanguage(lang) {
@@ -53,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Language button clicks
   document.querySelectorAll('.lang-btn').forEach(btn => {
-    btn.addEventListener('click', (e) => {
+    btn.addEventListener('click', () => {
       const selected = btn.getAttribute('data-lang');
       applyLanguage(selected);
     });
@@ -85,33 +87,32 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 4. Interactive Silk Road Route Map Tabs
-  const routeTabs = document.querySelectorAll('.route-tab');
-  const routeCards = document.querySelectorAll('.route-city-card');
+  // 4. Interactive Tashkent Sights Tabs
+  const sightTabs = document.querySelectorAll('.sight-tab');
+  const sightCards = document.querySelectorAll('.sight-display-card');
 
-  routeTabs.forEach(tab => {
+  sightTabs.forEach(tab => {
     tab.addEventListener('click', () => {
-      const cityId = tab.getAttribute('data-city');
+      const sightId = tab.getAttribute('data-sight');
       
-      routeTabs.forEach(t => t.classList.remove('active'));
-      routeCards.forEach(c => c.classList.remove('active'));
+      sightTabs.forEach(t => t.classList.remove('active'));
+      sightCards.forEach(c => c.classList.remove('active'));
 
       tab.classList.add('active');
-      const targetCard = document.getElementById(`city-${cityId}`);
+      const targetCard = document.getElementById(`sight-${sightId}`);
       if (targetCard) {
         targetCard.classList.add('active');
       }
     });
   });
 
-  // 5. Tour Inclusions & Day-by-Day Accordions
+  // 5. Tour Inclusions Accordions
   const accordionTriggers = document.querySelectorAll('.accordion-trigger');
   accordionTriggers.forEach(trigger => {
     trigger.addEventListener('click', () => {
       const content = trigger.nextElementSibling;
       const isOpen = trigger.classList.contains('active');
 
-      // Toggle current
       if (isOpen) {
         trigger.classList.remove('active');
         content.classList.remove('active');
@@ -124,7 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 6. Interactive Custom Tour Price Calculator
   const durationInputs = document.querySelectorAll('input[name="tour_duration"]');
-  const hotelInputs = document.querySelectorAll('input[name="hotel_tier"]');
+  const trainInputs = document.querySelectorAll('input[name="train_service"]');
   const experienceInputs = document.querySelectorAll('input[name="tour_experiences"]');
   const priceDisplay = document.getElementById('calc-price-display');
   const whatsappCustomBtn = document.getElementById('btn-whatsapp-custom');
@@ -132,21 +133,22 @@ document.addEventListener('DOMContentLoaded', () => {
   function updateCustomTourPrice() {
     if (!priceDisplay) return;
 
-    let basePrice = 890; // Default base 7-8 days
+    let basePrice = 85; // Default 1 full day in Tashkent
 
     // Duration
     const selectedDuration = document.querySelector('input[name="tour_duration"]:checked');
     if (selectedDuration) {
-      if (selectedDuration.value === 'mid') basePrice = 1180;
-      if (selectedDuration.value === 'long') basePrice = 1520;
+      if (selectedDuration.value === 'half') basePrice = 60;
+      if (selectedDuration.value === 'full') basePrice = 85;
+      if (selectedDuration.value === 'two') basePrice = 150;
     }
 
-    // Hotel tier multiplier
-    let hotelMultiplier = 1.0;
-    const selectedHotel = document.querySelector('input[name="hotel_tier"]:checked');
-    if (selectedHotel) {
-      if (selectedHotel.value === '4star') hotelMultiplier = 1.15;
-      if (selectedHotel.value === '5star') hotelMultiplier = 1.45;
+    // High-Speed Train Add-on
+    let trainCost = 0;
+    const selectedTrain = document.querySelector('input[name="train_service"]:checked');
+    if (selectedTrain) {
+      if (selectedTrain.value === 'afrosiyob') trainCost = 40;
+      if (selectedTrain.value === 'manguberdi') trainCost = 45;
     }
 
     // Experiences add-on
@@ -157,8 +159,8 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    const totalPerPerson = Math.round((basePrice * hotelMultiplier) + expAddon);
-    priceDisplay.textContent = `€ ${totalPerPerson.toLocaleString()}`;
+    const totalPerPerson = Math.round(basePrice + trainCost + expAddon);
+    priceDisplay.textContent = `€ ${totalPerPerson}`;
 
     // Update WhatsApp link with pre-filled message
     updateWhatsAppCustomLink(totalPerPerson);
@@ -168,34 +170,33 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!whatsappCustomBtn) return;
 
     const selectedDuration = document.querySelector('input[name="tour_duration"]:checked');
-    const durVal = selectedDuration ? selectedDuration.parentElement.textContent.trim() : '7-8 Giorni';
+    const durVal = selectedDuration ? selectedDuration.parentElement.textContent.trim() : '1 Giorno';
 
-    const selectedHotel = document.querySelector('input[name="hotel_tier"]:checked');
-    const hotelVal = selectedHotel ? selectedHotel.parentElement.textContent.trim() : 'Boutique Hotel';
+    const selectedTrain = document.querySelector('input[name="train_service"]:checked');
+    const trainVal = selectedTrain ? selectedTrain.parentElement.textContent.trim() : 'Solo tour';
 
     const selectedGroup = document.querySelector('input[name="travelers_group"]:checked');
     const groupVal = selectedGroup ? selectedGroup.parentElement.textContent.trim() : 'Coppia';
 
     let msg = '';
     if (currentLang === 'it') {
-      msg = `Buongiorno Farrukh! Vorrei informazioni per un tour su misura in Uzbekistan:\n` +
+      msg = `Buongiorno Sardor! Vorrei informazioni per un tour a Tashkent e assistenza treni:\n` +
             `• Durata: ${durVal}\n` +
-            `• Alloggio: ${hotelVal}\n` +
-            `• Viaggiatori: ${groupVal}\n` +
-            `• Preventivo stimato: circa € ${price} / persona.\n` +
-            `Potete inviarmi una proposta dettagliata? Grazie!`;
+            `• Biglietti treni: ${trainVal}\n` +
+            `• Partecipanti: ${groupVal}\n` +
+            `• Budget indicativo stimato: circa € ${price} / persona.\n` +
+            `Potete inviarmi la disponibilità e i dettagli? Grazie!`;
     } else {
-      msg = `Здравствуйте, Фаррух! Хочу заказать индивидуальный тур в Узбекистан:\n` +
-            `• Длительность: ${durVal}\n` +
-            `• Отели: ${hotelVal}\n` +
-            `• Состав группы: ${groupVal}\n` +
-            `• Ориентировочный бюджет: около € ${price} на человека.\n` +
-            `Отправьте, пожалуйста, подробную программу. Спасибо!`;
+      msg = `Hello Sardor! I would like details for a guided tour in Tashkent and train tickets:\n` +
+            `• Duration: ${durVal}\n` +
+            `• Train Service: ${trainVal}\n` +
+            `• Guests: ${groupVal}\n` +
+            `• Estimated Budget: approx € ${price} / person.\n` +
+            `Could you please send me availability and details? Thank you!`;
     }
 
-    const whatsappNumber = "998901234567"; // Can be updated with user's official phone
     const encoded = encodeURIComponent(msg);
-    whatsappCustomBtn.href = `https://wa.me/${whatsappNumber}?text=${encoded}`;
+    whatsappCustomBtn.href = `https://wa.me/${SARDOR_WHATSAPP}?text=${encoded}`;
   }
 
   // Add listeners for custom tour options
@@ -210,7 +211,6 @@ document.addEventListener('DOMContentLoaded', () => {
       const item = btn.parentElement;
       const isOpen = item.classList.contains('active');
 
-      // Close all others
       document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
 
       if (!isOpen) {
@@ -234,23 +234,19 @@ document.addEventListener('DOMContentLoaded', () => {
       const dates = document.getElementById('input-dates').value;
       const notes = document.getElementById('input-notes').value;
 
-      // Generate WhatsApp bridge as well
       let whatsappText = '';
       if (currentLang === 'it') {
-        whatsappText = `Richiesta Preventivo dal Sito:\nNome: ${name}\nEmail: ${email}\nTel: ${phone}\nTour: ${tour}\nPeriodo: ${dates}\nNote: ${notes}`;
+        whatsappText = `Richiesta Tour a Tashkent per Sardor:\nNome: ${name}\nEmail: ${email}\nTel: ${phone}\nServizio: ${tour}\nDate: ${dates}\nNote: ${notes}`;
       } else {
-        whatsappText = `Заявка с сайта:\nИмя: ${name}\nEmail: ${email}\nТел: ${phone}\nТур: ${tour}\nДаты: ${dates}\nПожелания: ${notes}`;
+        whatsappText = `Tashkent Tour Inquiry for Sardor:\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\nService: ${tour}\nDates: ${dates}\nNotes: ${notes}`;
       }
 
-      const whatsappNumber = "998901234567";
-      const waUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappText)}`;
+      const waUrl = `https://wa.me/${SARDOR_WHATSAPP}?text=${encodeURIComponent(whatsappText)}`;
 
-      // Show success
       if (formSuccess) {
         formSuccess.style.display = 'block';
       }
 
-      // Also give user option to open WhatsApp directly with all data filled
       setTimeout(() => {
         window.open(waUrl, '_blank');
       }, 800);
