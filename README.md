@@ -1,109 +1,93 @@
-# Viaggi Uzbekistan 🇺🇿 🇮🇹
+# VIAGGI UZBEKISTAN 🇺🇿 🇮🇹 🇬🇧
 
-**Piattaforma Web Ufficiale per Tour Operator Locale in Uzbekistan**  
-*Sito web incoming di alta gamma orientato ai viaggiatori italiani e dei paesi CSI lungo la Via della Seta.*
+**Piattaforma Web Ufficiale per Tour Operator e Guida a Tashkent**  
+*Sito web incoming per viaggiatori italiani ed internazionali alla scoperta di Tashkent con Sardor e servizio biglietteria treni ad alta velocità.*
 
 ---
 
-## 🌟 Caratteristiche Principali
+## 🌟 Punti di Forza
 
-- **Bilingue Istantaneo (Italiano / Russo):**
-  - Versione primaria in **Italiano** (`it`), con linguaggio turistico editoriale raffinato ed elegante.
-  - Switcher a 1 clic per la versione in **Russo** (`ru`) per visitatori e turisti dell'area CSI.
-  - Architettura a dizionari modulari in `js/translations.js` (estendibile facilmente a Inglese e Tedesco).
+- **Bilingue Istantaneo (Italiano / Inglese):**
+  - Versione primaria in **Italiano** (`it`) per intercettare il crescente flusso di viaggiatori dall'Italia.
+  - Switcher a 1 clic in **Inglese** (`en`) per viaggiatori internazionali.
+  - Architettura a dizionari in [`js/translations.js`](file:///d:/Agents/VIAGGI%20UZBEKISTAN/js/translations.js).
 
-- **Design di Lusso Awwwards & Silk Road:**
-  - Tavolozza cromatica: Blu Notte Zaffiro (`#060913`), Turchese Cupole di Samarcanda (`#0284C7`), Oro Sabbia del Kyzylkum (`#D4AF37`), Terracotta di Khiva (`#C85A32`).
-  - Tipografia svizzera e italiana: `Cinzel`, `Cormorant Garamond` e `Plus Jakarta Sans`.
-  - Componenti glassmorphism, gradienti luminosi e micro-animazioni.
+- **Guida Ufficiale di Stato:**
+  - Profilo dedicato a **Sardor**, guida abilitata dal Ministero del Turismo della Repubblica dell'Uzbekistan.
+  - Fluente in 4 lingue: **Italiano, Inglese, Uzbeko, Russo**.
+  - Contatto WhatsApp diretto: **+998 93 885 03 09**.
 
-- **Mappa Interattiva della Via della Seta:**
-  - Esplorazione dinamica di **Tashkent**, **Khiva**, **Bukhara**, **Samarcanda** e **Deserto di Kyzylkum & Yurt**.
-  - Schede informative con tempi di percorrenza del treno ad alta velocità **Afrosiyob** e punti d'interesse UNESCO.
+- **Focus Guidato su Tashkent:**
+  - *Tashkent Millenaria & La Città Vecchia* (Complesso Hazrati Imam col Corano di Othman del VII sec., Bazar Chorsu, Madrasa Kukeldash, pranzo tradizionale plov).
+  - *Metropolitana d'Arte & Tashkent Moderna* (Le 6 stazioni più celebri della metro, Piazza Amir Timur, iconico Hotel Uzbekistan, Magic City).
+  - *Tashkent al Tramonto, Moschea Bianca & Sapori* (Moschea Minore in marmo bianco, shashlik e somsa calde, fontane musicali di Tashkent City).
 
-- **Pacchetti Turistici di Punta:**
-  - *Classico Via della Seta* (8 Giorni / 7 Notti - Bestseller)
-  - *Gran Tour & Deserto di Kyzylkum* (11 Giorni / 10 Notti - Notte in iurta & cammelli)
-  - *Sapori & Maestri Artigiani* (9 Giorni / 8 Notti - Plov Masterclass & cantine storiche)
-  - Itinerari completi giorno per giorno e sezioni "Cosa è Incluso / Non Incluso".
+- **Biglietteria Ufficiale Treni ad Alta Velocità (Concierge):**
+  - **Afrosiyob** (treno proiettile Talgo a 250 km/h per Samarcanda e Bukhara).
+  - **Jaloliddin Manguberdi** (il nuovissimo treno espresso ad alta velocità per Khiva e Urgench).
+  - Garanzia dei biglietti con prenotazione prioritaria per proseguire in autonomia verso le altre città dell'Uzbekistan.
 
-- **Calcolatore Interattivo "Tour su Misura":**
-  - Selezione durata, categoria hotel (Boutique, 4*, 5*), tipologia di gruppo e singole esperienze.
-  - Stima di prezzo reattiva in tempo reale.
-  - Generatore di messaggio personalizzato pre-compilato con invio diretto su **WhatsApp**.
-
-- **Profilo Guida Certificata:**
-  - Presentazione della guida ufficiale abilitata dallo Stato con 1 anno di esperienza formativa in Italia, licenza ministeriale e perfetto bilinguismo IT/RU.
-
-- **SEO & Schema.org:**
-  - Microdati `TravelAgency` e `TouristTrip` in formato JSON-LD per indicizzazione organica su Google.
-  - Metatag OpenGraph, Twitter card e tag `hreflang`.
+- **Calcolatore "Tour su Misura":**
+  - Configurazione durata a Tashkent, opzione biglietti treno (Afrosiyob / Manguberdi) e singole esperienze gastronomiche/culturali.
+  - Calcolo prezzo in tempo reale e generazione automatica del messaggio su WhatsApp.
 
 ---
 
 ## 📁 Struttura del Progetto
 
 ```
-viaggi-uzbekistan/
+VIAGGI UZBEKISTAN/
 ├── assets/
 │   └── images/
-│       ├── hero_registan.jpg       # Panorama Registan al tramonto
-│       ├── tour_bukhara.jpg        # Complesso Po-i-Kalyan
-│       ├── tour_khiva.jpg          # Fortezza di Ichan-Kala
-│       ├── tour_desert.jpg         # Campo iurte nel deserto di Kyzylkum
-│       ├── guide_portrait.jpg      # Foto professionale guida ufficiale
-│       └── uzbek_gastronomy.jpg    # Plov tradizionale e pane tandir
+│       ├── tashkent_hazrati_imam.jpg       # Complesso Hazrati Imam
+│       ├── tashkent_chorsu_bazaar.jpg      # Cupola turchese Bazar Chorsu
+│       ├── train_afrosiyob_manguberdi.jpg  # Treni Afrosiyob & Manguberdi
+│       ├── guide_portrait.jpg              # Foto ufficiale Sardor
+│       └── uzbek_gastronomy.jpg            # Plov e pane tandir
 ├── css/
-│   └── style.css                   # Stili CSS completi e responsive
+│   └── style.css                           # Stili di lusso Silk Road & responsive
 ├── js/
-│   ├── translations.js             # Dizionario multilingue completo (IT/RU)
-│   └── main.js                     # Logica interattiva, calcolatore e filtri
-├── CNAME                           # Configurazione dominio viaggiuzbekistan.uz per GitHub Pages
-├── index.html                      # Pagina principale HTML5 semantica
-└── README.md                       # Documentazione del progetto
+│   ├── translations.js                     # Dizionario bilingue (IT/EN)
+│   └── main.js                             # Logica interattiva, calcolatore e WhatsApp
+├── CNAME                                   # viaggiuzbekistan.uz (GitHub Pages)
+├── index.html                              # Pagina principale HTML5 semantica e SEO
+└── README.md                               # Documentazione
 ```
 
 ---
 
-## 🚀 Come Eseguire Localmente
+## 🚀 Esecuzione Locale
 
-Non sono richieste dipendenze o librerie esterne. È sufficiente un qualsiasi server HTTP:
+Il server locale è attivo all'indirizzo:
+`http://localhost:8099/`
 
+Per avviarlo manualmente:
 ```bash
-# Con Python:
 python -m http.server 8099
-
-# Oppure con Node.js npx serve:
-npx serve .
 ```
-
-Aprire il browser su `http://localhost:8099/`.
 
 ---
 
-## 🌐 Istruzioni per la Pubblicazione su GitHub Pages & Dominio `viaggiuzbekistan.uz`
+## 🌐 Pubblicazione su GitHub Pages e Dominio `viaggiuzbekistan.uz`
 
-1. **Creare un nuovo repository su GitHub:**
-   - Ad esempio: `viaggi-uzbekistan` (pubblico o privato).
+1. **Creare un nuovo repository vuoto su GitHub:**
+   - Nome: `viaggi-uzbekistan`
 
-2. **Collegare il repository locale e fare push:**
+2. **Collegare ed inviare i file:**
    ```bash
    git remote add origin https://github.com/<tuo-account>/viaggi-uzbekistan.git
    git push -u origin main
    ```
 
 3. **Attivare GitHub Pages:**
-   - Vai su GitHub in **Settings -> Pages**.
-   - Sotto **Branch**, seleziona `main` e cartella `/ (root)`. Clicca **Save**.
-   - Il file `CNAME` già presente imposterà automaticamente il dominio `viaggiuzbekistan.uz`.
+   - Vai su **Settings ➔ Pages**
+   - Seleziona **Branch: main** e cartella `/ (root)`, poi clicca **Save**.
+   - Il file `CNAME` già incluso collegherà automaticamente il dominio `viaggiuzbekistan.uz`.
 
-4. **Configurare i DNS sul pannello del provider (Eskiz.uz):**
-   - Nel pannello DNS del dominio `viaggiuzbekistan.uz`, aggiungere i record di GitHub Pages:
-     - **Record A** (@):
-       - `185.199.108.153`
-       - `185.199.109.153`
-       - `185.199.110.153`
-       - `185.199.111.153`
-     - **Record CNAME** (www):
-       - `<tuo-account>.github.io`
-   - Il certificato SSL gratuito (HTTPS) verrà generato automaticamente da GitHub entro 10-30 minuti.
+4. **Configurare i record DNS su Eskiz.uz:**
+   - **Record A (@):**
+     - `185.199.108.153`
+     - `185.199.109.153`
+     - `185.199.110.153`
+     - `185.199.111.153`
+   - **Record CNAME (www):** `<tuo-account>.github.io`
