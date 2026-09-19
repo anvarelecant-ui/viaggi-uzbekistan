@@ -198,6 +198,92 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 8. Initial Language Render
+  // 8. Interactive Card Photo Carousels
+  function initCarousels() {
+    document.querySelectorAll('[data-carousel]').forEach(carousel => {
+      const slides = carousel.querySelectorAll('.carousel-slide');
+      const prevBtn = carousel.querySelector('.carousel-prev');
+      const nextBtn = carousel.querySelector('.carousel-next');
+      const counter = carousel.querySelector('.carousel-counter');
+      const dots = carousel.querySelectorAll('.carousel-dot');
+      
+      if (slides.length <= 1) {
+        if (prevBtn) prevBtn.style.display = 'none';
+        if (nextBtn) nextBtn.style.display = 'none';
+        if (counter) counter.style.display = 'none';
+        return;
+      }
+
+      let currentIndex = 0;
+
+      function goToSlide(index) {
+        if (index < 0) index = slides.length - 1;
+        if (index >= slides.length) index = 0;
+        currentIndex = index;
+
+        slides.forEach((slide, i) => {
+          if (i === currentIndex) {
+            slide.classList.add('active');
+          } else {
+            slide.classList.remove('active');
+          }
+        });
+
+        if (counter) {
+          counter.textContent = `${currentIndex + 1} / ${slides.length}`;
+        }
+
+        dots.forEach((dot, i) => {
+          if (i === currentIndex) {
+            dot.classList.add('active');
+          } else {
+            dot.classList.remove('active');
+          }
+        });
+      }
+
+      if (prevBtn) {
+        prevBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          e.preventDefault();
+          goToSlide(currentIndex - 1);
+        });
+      }
+
+      if (nextBtn) {
+        nextBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          e.preventDefault();
+          goToSlide(currentIndex + 1);
+        });
+      }
+
+      dots.forEach((dot, idx) => {
+        dot.addEventListener('click', (e) => {
+          e.stopPropagation();
+          e.preventDefault();
+          goToSlide(idx);
+        });
+      });
+
+      // Touch swipe support for mobile
+      let startX = 0;
+      carousel.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+      }, { passive: true });
+
+      carousel.addEventListener('touchend', (e) => {
+        const diffX = e.changedTouches[0].clientX - startX;
+        if (Math.abs(diffX) > 40) {
+          if (diffX > 0) goToSlide(currentIndex - 1);
+          else goToSlide(currentIndex + 1);
+        }
+      }, { passive: true });
+    });
+  }
+
+  initCarousels();
+
+  // 9. Initial Language Render
   applyLanguage(currentLang);
 });

@@ -78,8 +78,8 @@
 
       <!-- Navigation -->
       <nav class="nav-menu">
-        <a href="#attrazioni" class="nav-link" data-i18n="nav_sights">Attrazioni di Tashkent</a>
-        <a href="#tours" class="nav-link" data-i18n="nav_tours">I Nostri Tour</a>
+        <a href="#tours" class="nav-link" data-i18n="nav_sights">Esperienze Guidate</a>
+        <a href="#gastronomia" class="nav-link" data-i18n="nav_gastro">Gastronomia & Sapori</a>
         <a href="#guida" class="nav-link" data-i18n="nav_guide">La Tua Guida</a>
         <a href="#custom-tour" class="nav-link" data-i18n="nav_custom">Tour su Misura</a>
         <a href="#info-utili" class="nav-link" data-i18n="nav_info">Info Viaggio</a>
@@ -202,71 +202,272 @@
     </div>
   </section>
 
-  <!-- Tashkent Sights & Landmarks (Featuring the Real Center of Islamic Civilization) -->
-  <section class="route-section" id="attrazioni">
+  <!-- Unified Guided Experiences in Tashkent with Sardor (Featuring Interactive Real Photo Carousels) -->
+  <section class="tours-section" id="tours">
+    <span id="attrazioni" style="position:relative; top:-100px; display:block; visibility:hidden;"></span>
     <div class="container">
       <div class="section-header">
-        <span class="section-badge" data-i18n="sights_badge">Le Meraviglie della Capitale</span>
-        <h2 class="section-title" data-i18n="sights_title">I Luoghi Iconici di Tashkent</h2>
-        <p class="section-desc" data-i18n="sights_desc">Una metropoli millenaria unica al mondo: crocevia tra la grandiosità della Via della Seta, il fascino architettonico e l'eleganza contemporanea.</p>
+        <span class="section-badge" data-i18n="tours_badge">Visite ed Esperienze Guidate con Sardor</span>
+        <h2 class="section-title" data-i18n="tours_title">I Capolavori di Tashkent con la Tua Guida Ufficiale</h2>
+        <p class="section-desc" data-i18n="tours_desc">Sardor vi accompagna personalmente all'interno dei monumenti più iconici della capitale: spiegazioni approfondite in italiano, aneddoti storici, passeggiate autentiche e trasferimenti privati climatizzati.</p>
       </div>
 
-      <!-- Sights Grid -->
-      <div class="info-grid" style="grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 30px;">
+      <div class="tours-grid">
         
-        <!-- Sight 1: Centro della Civiltà Islamica (Real Photo) -->
-        <div class="tour-card featured" style="border-radius: var(--radius-lg);">
-          <div class="tour-thumb" style="height: 240px;">
-            <img src="assets/images/tashkent_islamic_center.jpg" alt="Centro della Civiltà Islamica a Tashkent">
-            <span class="tour-badge" data-i18n="sight_islamic_center_badge">Nuovo Grande Monumento</span>
+        <!-- Tour 1: Center of Islamic Civilization & Hazrati Imam (4 Real Photos with Carousel) -->
+        <div class="tour-card featured">
+          <div class="card-carousel" data-carousel>
+            <div class="carousel-track">
+              <div class="carousel-slide active">
+                <img src="assets/images/real/islamic_center_day.jpg" alt="Centro della Civiltà Islamica - Facciata Diurna" loading="lazy">
+                <div class="carousel-caption">1. Facciata Monumentale di Giorno</div>
+              </div>
+              <div class="carousel-slide">
+                <img src="assets/images/real/islamic_center_night.jpg" alt="Centro della Civiltà Islamica - Notte Illuminata" loading="lazy">
+                <div class="carousel-caption">2. Cupola da 65m Illuminata di Notte</div>
+              </div>
+              <div class="carousel-slide">
+                <img src="assets/images/real/islamic_center_interior.jpg" alt="Centro della Civiltà Islamica - Interni del Museo" loading="lazy">
+                <div class="carousel-caption">3. Interni del Museo & Sala del Corano</div>
+              </div>
+              <div class="carousel-slide">
+                <img src="assets/images/real/hazrati_imam_1.jpg" alt="Complesso Hazrati Imam" loading="lazy">
+                <div class="carousel-caption">4. Complesso Hazrati Imam & Manoscritti</div>
+              </div>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <button type="button" class="carousel-btn carousel-prev" aria-label="Foto precedente">
+              <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+            </button>
+            <button type="button" class="carousel-btn carousel-next" aria-label="Foto successiva">
+              <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+            </button>
+
+            <!-- Meta Counter & Dots -->
+            <div class="carousel-meta">
+              <span class="carousel-counter">1 / 4</span>
+              <div class="carousel-dots">
+                <span class="carousel-dot active"></span>
+                <span class="carousel-dot"></span>
+                <span class="carousel-dot"></span>
+                <span class="carousel-dot"></span>
+              </div>
+            </div>
+
+            <span class="tour-badge" data-i18n="tour1_badge">Visita all'Interno • Nuovo Monumento</span>
+            <span class="tour-duration-pill" data-i18n="tour1_duration">1 Giorno (7-8 Ore)</span>
           </div>
-          <div class="tour-body" style="padding: 24px;">
-            <h3 class="tour-title" style="font-size: 1.35rem;" data-i18n="sight_islamic_center_title">Centro della Civiltà Islamica</h3>
-            <p class="tour-summary" data-i18n="sight_islamic_center_desc">
-              Il maestoso e nuovissimo complesso monumentale su oltre 42.000 m² con una cupola turchese alta 65 metri. Custodisce il grandioso Museo del Rinascimento Orientale, una biblioteca sterminata e la Sala d'Onore del Sacro Corano di Othman illuminata da oltre un milione di cristalli.
+
+          <div class="tour-body">
+            <span class="tour-tagline" data-i18n="tour1_tagline">Visita con Guida all'Interno • Il Sacro Corano di Othman • Museo del Rinascimento Orientale</span>
+            <h3 class="tour-title" data-i18n="tour1_title">Il Nuovo Centro della Civiltà Islamica & Complesso Hazrati Imam</h3>
+            <p class="tour-summary" data-i18n="tour1_summary">
+              Sardor vi guiderà personalmente all'interno del grandioso Centro della Civiltà Islamica (oltre 42.000 m² con cupola da 65 metri). Entrerete nella spettacolare Sala d'Onore illuminata da cristalli dove è custodito il venerato Corano di Othman del VII secolo, esplorerete le sale del Museo del Rinascimento Orientale con i capolavori di Avicenna e Al-Biruni, e proseguirete verso la storica piazza Hazrati Imam e la madrasa Barak-Khan con spiegazioni appassionate in lingua italiana.
             </p>
+
+            <div class="tour-details-accordion">
+              <button type="button" class="accordion-trigger">
+                <span>Cosa è Incluso nel Tour con Sardor</span>
+                <svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>
+              </button>
+              <div class="accordion-content">
+                <ul>
+                  <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg><span data-i18n="tour1_inc1">Visita guidata all'interno del Centro della Civiltà Islamica e dei musei condotta personalmente da Sardor</span></li>
+                  <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg><span data-i18n="tour1_inc2">Spiegazione approfondita del Corano di Othman del VII secolo e dei manoscritti storici</span></li>
+                  <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg><span data-i18n="tour1_inc3">Trasferimenti privati con comoda auto moderna dotata di aria condizionata e autista</span></li>
+                  <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg><span data-i18n="tour1_inc4">Biglietti di ingresso ufficiali a tutti i musei e complessi monumentali del programma</span></li>
+                  <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg><span data-i18n="tour1_inc5">Sosta per il pranzo tradizionale con autentico plov di Tashkent, pane caldo tandir e insalata</span></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="tour-footer">
+              <div class="tour-price-box">
+                <span class="tour-price-label" data-i18n="tour_price_on_request">Prezzo su richiesta</span>
+                <span class="tour-price-unit" data-i18n="tour_price_note">Tariffe personalizzate in base al numero di partecipanti</span>
+              </div>
+              <a href="https://wa.me/998938850309?text=Buongiorno%20Sardor!%20Vorrei%20informazioni%20per%20il%20tour%20al%20Centro%20di%20Civiltà%20Islamica%20e%20Hazrati%20Imam." target="_blank" class="btn btn-primary" data-i18n="tour_quote_btn">Richiedi Dettagli con Sardor</a>
+            </div>
           </div>
         </div>
 
-        <!-- Sight 2: Hazrati Imam Complex -->
-        <div class="tour-card" style="border-radius: var(--radius-lg);">
-          <div class="tour-thumb" style="height: 240px;">
-            <img src="assets/images/tashkent_hazrati_imam.jpg" alt="Complesso Hazrati Imam Tashkent">
-            <span class="tour-badge" data-i18n="sight_hazrat_badge">Patrimonio Spirituale</span>
+        <!-- Tour 2: Chorsu Bazaar & Old City Mahallas (3 Real Photos with Carousel) -->
+        <div class="tour-card">
+          <div class="card-carousel" data-carousel>
+            <div class="carousel-track">
+              <div class="carousel-slide active">
+                <img src="assets/images/real/chorsu_bazaar_1.jpg" alt="Bazar Chorsu Tashkent - Cupola Turchese" loading="lazy">
+                <div class="carousel-caption">1. Colossale Cupola Turchese</div>
+              </div>
+              <div class="carousel-slide">
+                <img src="assets/images/real/chorsu_bazaar_2.jpg" alt="Bazar Chorsu - Banchi di Spezie e Frutta Secca" loading="lazy">
+                <div class="carousel-caption">2. Banchi di Spezie & Frutta Secca</div>
+              </div>
+              <div class="carousel-slide">
+                <img src="assets/images/real/chorsu_shashlik_alley.jpg" alt="Chorsu - Il Vicolo del Cibo Fumante" loading="lazy">
+                <div class="carousel-caption">3. Il Vicolo Storico del Cibo</div>
+              </div>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <button type="button" class="carousel-btn carousel-prev" aria-label="Foto precedente">
+              <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+            </button>
+            <button type="button" class="carousel-btn carousel-next" aria-label="Foto successiva">
+              <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+            </button>
+
+            <!-- Meta Counter & Dots -->
+            <div class="carousel-meta">
+              <span class="carousel-counter">1 / 3</span>
+              <div class="carousel-dots">
+                <span class="carousel-dot active"></span>
+                <span class="carousel-dot"></span>
+                <span class="carousel-dot"></span>
+              </div>
+            </div>
+
+            <span class="tour-badge" data-i18n="tour2_badge">Città Vecchia • Vita Locale</span>
+            <span class="tour-duration-pill" data-i18n="tour2_duration">Mezza Giornata (4-5 Ore)</span>
           </div>
-          <div class="tour-body" style="padding: 24px;">
-            <h3 class="tour-title" style="font-size: 1.35rem;" data-i18n="sight_hazrat_title">Complesso Hazrati Imam & Corano di Othman</h3>
-            <p class="tour-summary" data-i18n="sight_hazrat_desc">
-              Il cuore spirituale storico di Tashkent con la madrasa Barak-Khan e la moschea Tilla Sheikh. Luogo di pellegrinaggio secolare e culla di manoscritti unici al mondo.
+
+          <div class="tour-body">
+            <span class="tour-tagline" data-i18n="tour2_tagline">Colossale Cupola Modernista • Vicoli delle Mahalle • Maestri Artigiani • Spezie</span>
+            <h3 class="tour-title" data-i18n="tour2_title">Bazar Monumentale Chorsu, Città Vecchia & Mahalle Storiche</h3>
+            <p class="tour-summary" data-i18n="tour2_summary">
+              Un'immersione viva nel cuore di Eski Shahar (Città Vecchia) guidati da Sardor. Non un tour frettoloso, ma una passeggiata tra i vicoli delle mahalle millenarie con le tipiche case a cortile in legno intagliato, le botteghe degli intagliatori e fabbri, e la gigantesca cupola turchese di Chorsu. Sardor vi aiuterà a comunicare con i venditori locali, degustare frutta secca e spezie e scoprire la vera anima quotidiana di Tashkent.
             </p>
+
+            <div class="tour-details-accordion">
+              <button type="button" class="accordion-trigger">
+                <span>Cosa è Incluso nel Tour con Sardor</span>
+                <svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>
+              </button>
+              <div class="accordion-content">
+                <ul>
+                  <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg><span data-i18n="tour2_inc1">Guida ufficiale privata (Sardor) per tutta la durata dell'itinerario a piedi e nei mercati</span></li>
+                  <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg><span data-i18n="tour2_inc2">Passeggiata guidata nelle antiche mahalle residenziali della Città Vecchia di Tashkent</span></li>
+                  <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg><span data-i18n="tour2_inc3">Degustazione guidata di frutta secca uzbeka, mandorle, fichi e dolci tradizionali al bazar</span></li>
+                  <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg><span data-i18n="tour2_inc4">Visita alle botteghe artigianali di ceramica, strumenti musicali e coltelli tradizionali</span></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="tour-footer">
+              <div class="tour-price-box">
+                <span class="tour-price-label" data-i18n="tour_price_on_request">Prezzo su richiesta</span>
+                <span class="tour-price-unit" data-i18n="tour_price_note">Tariffe personalizzate in base al numero di partecipanti</span>
+              </div>
+              <a href="https://wa.me/998938850309?text=Buongiorno%20Sardor!%20Vorrei%20informazioni%20per%20il%20tour%20di%20Chorsu%20e%20della%20Città%20Vecchia." target="_blank" class="btn btn-primary" data-i18n="tour_quote_btn">Richiedi Dettagli con Sardor</a>
+            </div>
           </div>
         </div>
 
-        <!-- Sight 3: Chorsu Bazaar -->
-        <div class="tour-card" style="border-radius: var(--radius-lg);">
-          <div class="tour-thumb" style="height: 240px;">
-            <img src="assets/images/tashkent_chorsu_bazaar.jpg" alt="Bazar Chorsu Tashkent">
-            <span class="tour-badge" data-i18n="sight_chorsu_badge">Mercato Storico</span>
+        <!-- Tour 3: Art Metro & Modern Architecture (2 Real Photos with Carousel) -->
+        <div class="tour-card">
+          <div class="card-carousel" data-carousel>
+            <div class="carousel-track">
+              <div class="carousel-slide active">
+                <img src="assets/images/real/metro_kosmonavtlar_1.jpg" alt="Metropolitana di Tashkent - Stazione Kosmonavtlar" loading="lazy">
+                <div class="carousel-caption">1. Stazione Kosmonavtlar (Medaglioni Spaziali)</div>
+              </div>
+              <div class="carousel-slide">
+                <img src="assets/images/real/metro_kosmonavtlar_2.jpg" alt="Metropolitana di Tashkent - Colonati in Marmo" loading="lazy">
+                <div class="carousel-caption">2. Colonne in Marmo & Candelabri</div>
+              </div>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <button type="button" class="carousel-btn carousel-prev" aria-label="Foto precedente">
+              <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+            </button>
+            <button type="button" class="carousel-btn carousel-next" aria-label="Foto successiva">
+              <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+            </button>
+
+            <!-- Meta Counter & Dots -->
+            <div class="carousel-meta">
+              <span class="carousel-counter">1 / 2</span>
+              <div class="carousel-dots">
+                <span class="carousel-dot active"></span>
+                <span class="carousel-dot"></span>
+              </div>
+            </div>
+
+            <span class="tour-badge" data-i18n="tour3_badge">Architettura • Museo Sotterraneo</span>
+            <span class="tour-duration-pill" data-i18n="tour3_duration">Mezza Giornata (4-5 Ore)</span>
           </div>
-          <div class="tour-body" style="padding: 24px;">
-            <h3 class="tour-title" style="font-size: 1.35rem;" data-i18n="sight_chorsu_title">Bazar Monumentale di Chorsu</h3>
-            <p class="tour-summary" data-i18n="sight_chorsu_desc">
-              La gigantesca cupola turchese accoglie il mercato più vivo dell'Asia Centrale: spezie profumate, piramidi di frutta secca, pane tandir appena sfornato e botteghe di maestri artigiani.
+
+          <div class="tour-body">
+            <span class="tour-tagline" data-i18n="tour3_tagline">Palazzi Sotterranei • Stazione Kosmonavtlar • Hotel Uzbekistan • Tashkent City</span>
+            <h3 class="tour-title" data-i18n="tour3_title">I Capolavori della Metropolitana d'Arte & Tashkent Sovietica/Moderna</h3>
+            <p class="tour-summary" data-i18n="tour3_summary">
+              Un affascinante viaggio nel 'palazzo sotterraneo del popolo' e nell'architettura monumentale della capitale. Insieme a Sardor scenderete nelle stazioni più spettacolari della metropolitana di Tashkent (Kosmonavtlar con i medaglioni in ceramica blu dedicati ai cosmonauti, Alisher Navoi con le sue cupole e lampadari). In superficie, esplorerete l'iconico Hotel Uzbekistan, Piazza Amir Timur e i parchi futuristici di Tashkent City.
             </p>
+
+            <div class="tour-details-accordion">
+              <button type="button" class="accordion-trigger">
+                <span>Cosa è Incluso nel Tour con Sardor</span>
+                <svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>
+              </button>
+              <div class="accordion-content">
+                <ul>
+                  <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg><span data-i18n="tour3_inc1">Guida ufficiale parlante italiano (Sardor) con spiegazioni storico-architettoniche dedicate</span></li>
+                  <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg><span data-i18n="tour3_inc2">Biglietti di ingresso per tutte le stazioni d'arte della metropolitana di Tashkent</span></li>
+                  <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg><span data-i18n="tour3_inc3">Passeggiata guidata lungo il viale Broadway con sosta tè tradizionale</span></li>
+                  <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg><span data-i18n="tour3_inc4">Visita panoramica all'architettura modernista dell'Hotel Uzbekistan e Piazza Amir Timur</span></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="tour-footer">
+              <div class="tour-price-box">
+                <span class="tour-price-label" data-i18n="tour_price_on_request">Prezzo su richiesta</span>
+                <span class="tour-price-unit" data-i18n="tour_price_note">Tariffe personalizzate in base al numero di partecipanti</span>
+              </div>
+              <a href="https://wa.me/998938850309?text=Buongiorno%20Sardor!%20Vorrei%20informazioni%20per%20il%20tour%20della%20Metropolitana%20d%27Arte%20e%20Tashkent%20Moderna." target="_blank" class="btn btn-primary" data-i18n="tour_quote_btn">Richiedi Dettagli con Sardor</a>
+            </div>
           </div>
         </div>
 
-        <!-- Sight 4: Besh Qozon Gastronomy -->
-        <div class="tour-card" style="border-radius: var(--radius-lg);">
-          <div class="tour-thumb" style="height: 240px;">
-            <img src="assets/images/uzbek_gastronomy.jpg" alt="Plov e Gastronomia di Tashkent">
-            <span class="tour-badge" data-i18n="sight_plov_badge">Sapori della Seta</span>
+        <!-- Tour 4: Evening Tour, White Minor Mosque & City Lights (Real Photo) -->
+        <div class="tour-card">
+          <div class="tour-thumb">
+            <img src="assets/images/real/minor_mosque_1.jpg" alt="Moschea Minore Bianca sul Canale Anhor Tashkent" loading="lazy">
+            <span class="tour-badge" data-i18n="tour4_badge">Tour Serale • Atmosfera Romantica</span>
+            <span class="tour-duration-pill" data-i18n="tour4_duration">Serale (4 Ore)</span>
           </div>
-          <div class="tour-body" style="padding: 24px;">
-            <h3 class="tour-title" style="font-size: 1.35rem;" data-i18n="sight_plov_title">Besh Qozon & Gastronomia di Tashkent</h3>
-            <p class="tour-summary" data-i18n="sight_plov_desc">
-              Il celebre Centro del Plov con enormi calderoni (kazan) in ghisa. Plov fumante cotto con carne tenerissima, carote gialle, cumino e uvetta, accompagnato da pane caldo e insalata fresca.
+
+          <div class="tour-body">
+            <span class="tour-tagline" data-i18n="tour4_tagline">Marmo Bianco sul Canale Anhor • Passeggiata Broadway • Spiedini Shashlik & Fontane</span>
+            <h3 class="tour-title" data-i18n="tour4_title">Tashkent al Tramonto: La Moschea Bianca Minore & Sapori Serali</h3>
+            <p class="tour-summary" data-i18n="tour4_summary">
+              Quando cala il sole e la temperatura si rinfresca, Tashkent si accende di magia. Sardor vi condurrà ad ammirare la splendida Moschea Minore in candido marmo bianco affacciata sul canale Anhor, vi accompagnerà lungo il vivace viale Broadway tra artisti e pittori locali, per poi concludere con una gustosa cena tipica a base di shashlik e lo spettacolo delle fontane musicali illuminate.
             </p>
+
+            <div class="tour-details-accordion">
+              <button type="button" class="accordion-trigger">
+                <span>Cosa è Incluso nel Tour con Sardor</span>
+                <svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>
+              </button>
+              <div class="accordion-content">
+                <ul>
+                  <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg><span data-i18n="tour4_inc1">Guida ufficiale parlante italiano per l'intero tour serale</span></li>
+                  <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg><span data-i18n="tour4_inc2">Cena tipica serale con degustazione di shashlik assortiti di carne, somsa calde e pane</span></li>
+                  <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg><span data-i18n="tour4_inc3">Trasporto serale privato con comodo veicolo climatizzato e autista dedicato</span></li>
+                  <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg><span data-i18n="tour4_inc4">Sosta fotografica alla Moschea Minore illuminata e fontane danzanti</span></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="tour-footer">
+              <div class="tour-price-box">
+                <span class="tour-price-label" data-i18n="tour_price_on_request">Prezzo su richiesta</span>
+                <span class="tour-price-unit" data-i18n="tour_price_note">Tariffe personalizzate in base al numero di partecipanti</span>
+              </div>
+              <a href="https://wa.me/998938850309?text=Buongiorno%20Sardor!%20Vorrei%20informazioni%20per%20il%20tour%20serale%20alla%20Moschea%20Bianca%20e%20street%20food." target="_blank" class="btn btn-primary" data-i18n="tour_quote_btn">Richiedi Dettagli con Sardor</a>
+            </div>
           </div>
         </div>
 
@@ -274,127 +475,126 @@
     </div>
   </section>
 
-  <!-- Guided Tour Packages in Tashkent (No Prices) -->
-  <section class="tours-section" id="tours">
+  <!-- Dedicated Tashkent Gastronomy Section (Rich & Authentic Silk Road Flavors) -->
+  <section class="gastro-section" id="gastronomia">
     <div class="container">
       <div class="section-header">
-        <span class="section-badge" data-i18n="tours_badge">I Nostri Tour Guidati</span>
-        <h2 class="section-title" data-i18n="tours_title">Esperienze Guidate a Tashkent con Sardor</h2>
-        <p class="section-desc" data-i18n="tours_desc">Programmi studiati per viaggiatori esigenti che desiderano scoprire la vera anima di Tashkent con una guida locale dedicata.</p>
+        <span class="section-badge" data-i18n="gastro_badge">I Sapori della Via della Seta</span>
+        <h2 class="section-title" data-i18n="gastro_title">Il Viaggio Gastronomico a Tashkent con Sardor</h2>
+        <p class="section-desc" data-i18n="gastro_desc">La cucina uzbeka è un tesoro riconosciuto dall'UNESCO come patrimonio immateriale dell'umanità. A Tashkent il cibo è ospitalità sacra e festa quotidiana. Sardor vi accompagnerà nei templi culinari più celebri, autentici e sicuri della città.</p>
       </div>
 
-      <div class="tours-grid">
-        <!-- Tour 1: Full Day -->
-        <div class="tour-card featured">
-          <div class="tour-thumb">
-            <img src="assets/images/tashkent_hazrati_imam.jpg" alt="Tashkent Millenaria e Città Vecchia">
-            <span class="tour-badge" data-i18n="tour1_badge">Giornata Completa</span>
-            <span class="tour-duration-pill" data-i18n="tour1_duration">1 Giorno (7-8 Ore)</span>
-          </div>
-          <div class="tour-body">
-            <span class="tour-tagline" data-i18n="tour1_tagline">Centro Civiltà Islamica • Hazrati Imam • Bazar Chorsu • Pranzo Tradizionale</span>
-            <h3 class="tour-title" data-i18n="tour1_title">Tashkent Millenaria & La Città Vecchia</h3>
-            <p class="tour-summary" data-i18n="tour1_summary">Il tour definitivo per scoprire le radici storiche della capitale. Visita il grandioso Centro della Civiltà Islamica, il complesso di Hazrati Imam, i vicoli antichi della Città Vecchia, il Bazar Chorsu e una pausa pranzo speciale con plov tradizionale.</p>
-
-            <div class="tour-details-accordion">
-              <button type="button" class="accordion-trigger">
-                <span>Cosa è Incluso nel Tour</span>
-                <svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>
-              </button>
-              <div class="accordion-content">
-                <ul>
-                  <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg><span data-i18n="tour1_inc1">Guida ufficiale privata parlante italiano (Sardor) per l'intera giornata</span></li>
-                  <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg><span data-i18n="tour1_inc2">Trasferimenti privati con comoda auto moderna dotata di aria condizionata</span></li>
-                  <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg><span data-i18n="tour1_inc3">Biglietti di ingresso ai monumenti storici e musei previsti nel programma</span></li>
-                  <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg><span data-i18n="tour1_inc4">Pranzo tradizionale uzbeko con plov, insalata fresca Achichuk e pane tandir</span></li>
-                  <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg><span data-i18n="tour1_inc5">Acqua minerale sempre fresca a bordo del veicolo</span></li>
-                </ul>
+      <div class="gastro-grid">
+        
+        <!-- Gastro 1: Besh Qozon (Real Photos with Carousel) -->
+        <div class="gastro-card">
+          <div class="card-carousel" data-carousel style="height: 230px;">
+            <div class="carousel-track">
+              <div class="carousel-slide active">
+                <img src="assets/images/real/besh_qozon_plov_1.jpg" alt="Calderoni giganti a Besh Qozon Tashkent" loading="lazy">
+                <div class="carousel-caption">I Calderoni Giganti di Plov</div>
+              </div>
+              <div class="carousel-slide">
+                <img src="assets/images/real/besh_qozon_plov_2.jpg" alt="Maestro Oshpaz che impiatta il Plov Nuziale" loading="lazy">
+                <div class="carousel-caption">Il Maestro Chef (Oshpaz) al Lavoro</div>
               </div>
             </div>
 
-            <div class="tour-footer">
-              <div class="tour-price-box">
-                <span class="tour-price-label" data-i18n="tour_price_on_request">Prezzo su richiesta</span>
-                <span class="tour-price-unit" data-i18n="tour_price_note">Tariffe personalizzate in base al numero di partecipanti</span>
+            <button type="button" class="carousel-btn carousel-prev" aria-label="Foto precedente">
+              <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+            </button>
+            <button type="button" class="carousel-btn carousel-next" aria-label="Foto successiva">
+              <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+            </button>
+
+            <div class="carousel-meta">
+              <span class="carousel-counter">1 / 2</span>
+              <div class="carousel-dots">
+                <span class="carousel-dot active"></span>
+                <span class="carousel-dot"></span>
               </div>
-              <a href="#contatti" class="btn btn-primary" data-i18n="tour_quote_btn">Richiedi Dettagli & Preventivo</a>
             </div>
           </div>
-        </div>
 
-        <!-- Tour 2: Metro Art & Modern -->
-        <div class="tour-card">
-          <div class="tour-thumb">
-            <img src="assets/images/tashkent_chorsu_bazaar.jpg" alt="Metropolitana d'Arte e Tashkent Moderna">
-            <span class="tour-badge" data-i18n="tour2_badge">Mezza Giornata</span>
-            <span class="tour-duration-pill" data-i18n="tour2_duration">Mezza Giornata (4-5 Ore)</span>
-          </div>
-          <div class="tour-body">
-            <span class="tour-tagline" data-i18n="tour2_tagline">Metro Monumentale • Piazza Amir Timur • Hotel Uzbekistan • Magic City</span>
-            <h3 class="tour-title" data-i18n="tour2_title">Metropolitana d'Arte & Tashkent Moderna</h3>
-            <p class="tour-summary" data-i18n="tour2_summary">Un affascinante viaggio tra il modernismo sovietico e la Tashkent contemporanea. Esplora le stazioni più spettacolari della metropolitana sotterranea, la piazza di Tamerlano, l'iconico Hotel Uzbekistan e i parchi moderni della città.</p>
-
-            <div class="tour-details-accordion">
-              <button type="button" class="accordion-trigger">
-                <span>Cosa è Incluso nel Tour</span>
-                <svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>
-              </button>
-              <div class="accordion-content">
-                <ul>
-                  <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg><span data-i18n="tour2_inc1">Guida ufficiale parlante italiano dedicata</span></li>
-                  <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg><span data-i18n="tour2_inc2">Biglietti d'ingresso per le stazioni d'arte della metropolitana di Tashkent</span></li>
-                  <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg><span data-i18n="tour2_inc3">Passeggiata guidata lungo il viale Broadway e sosta caffè/tè</span></li>
-                  <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg><span data-i18n="tour2_inc4">Visita panoramica all'icona modernista Hotel Uzbekistan e Tashkent City</span></li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="tour-footer">
-              <div class="tour-price-box">
-                <span class="tour-price-label" data-i18n="tour_price_on_request">Prezzo su richiesta</span>
-                <span class="tour-price-unit" data-i18n="tour_price_note">Tariffe personalizzate in base al numero di partecipanti</span>
-              </div>
-              <a href="#contatti" class="btn btn-primary" data-i18n="tour_quote_btn">Richiedi Dettagli & Preventivo</a>
-            </div>
+          <div class="gastro-body">
+            <span class="gastro-tag" data-i18n="gastro1_tag">Il Tempio del Plov Nuziale</span>
+            <h3 class="gastro-title" data-i18n="gastro1_title">Besh Qozon (Centro del Plov dell'Asia Centrale)</h3>
+            <p class="gastro-desc" data-i18n="gastro1_desc">
+              L'istituzione culinaria più famosa dell'Uzbekistan. Enormi calderoni (qozon) in ghisa cuociono a fuoco vivo tonnellate del leggendario To'y Oshi nuziale: carne succulenta di manzo e agnello, carote gialle zuccherine di Bukhara, uvetta, ceci, uova di quaglia e kazy (salsiccia tradizionale). Servito con insalata fresca Achichuk e tè verde.
+            </p>
+            <ul class="gastro-details-list">
+              <li>✨ Rituale del plov cotto e servito a mezzogiorno esatto</li>
+              <li>✨ Assaggio del kazy tradizionale e uova di quaglia</li>
+            </ul>
           </div>
         </div>
 
-        <!-- Tour 3: Night & Food -->
-        <div class="tour-card">
-          <div class="tour-thumb">
-            <img src="assets/images/uzbek_gastronomy.jpg" alt="Tashkent al Tramonto e Gastronomia">
-            <span class="tour-badge" data-i18n="tour3_badge">Tour Serale</span>
-            <span class="tour-duration-pill" data-i18n="tour3_duration">Serale (4 Ore)</span>
+        <!-- Gastro 2: Chorsu Ovqat Bozori Street Food (Real Photo) -->
+        <div class="gastro-card">
+          <div class="gastro-thumb">
+            <img src="assets/images/real/chorsu_shashlik_alley.jpg" alt="Vicolo del cibo fumante a Chorsu Bazar" loading="lazy">
           </div>
-          <div class="tour-body">
-            <span class="tour-tagline" data-i18n="tour3_tagline">Moschea Minore Bianca • Degustazione Shashlik • Fontane Danzanti</span>
-            <h3 class="tour-title" data-i18n="tour3_title">Tashkent al Tramonto, Moschea Bianca & Sapori</h3>
-            <p class="tour-summary" data-i18n="tour3_summary">Scopri la capitale quando le temperature si rinfrescano e le cupole si illuminano. Visita la suggestiva Moschea Minore in marmo bianco, cena tipica a base di spiedini shashlik e somsa, e spettacolo serale di fontane musicali.</p>
-
-            <div class="tour-details-accordion">
-              <button type="button" class="accordion-trigger">
-                <span>Cosa è Incluso nel Tour</span>
-                <svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>
-              </button>
-              <div class="accordion-content">
-                <ul>
-                  <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg><span data-i18n="tour3_inc1">Guida ufficiale parlante italiano per il tour notturno</span></li>
-                  <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg><span data-i18n="tour3_inc2">Cena tipica serale con degustazione di shashlik assortiti e pane caldo</span></li>
-                  <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg><span data-i18n="tour3_inc3">Trasporto serale privato con autista dedicato</span></li>
-                  <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg><span data-i18n="tour3_inc4">Sosta fotografica panoramica alla Moschea Minore illuminata</span></li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="tour-footer">
-              <div class="tour-price-box">
-                <span class="tour-price-label" data-i18n="tour_price_on_request">Prezzo su richiesta</span>
-                <span class="tour-price-unit" data-i18n="tour_price_note">Tariffe personalizzate in base al numero di partecipanti</span>
-              </div>
-              <a href="#contatti" class="btn btn-primary" data-i18n="tour_quote_btn">Richiedi Dettagli & Preventivo</a>
-            </div>
+          <div class="gastro-body">
+            <span class="gastro-tag" data-i18n="gastro2_tag">Street Food & Brace Viva</span>
+            <h3 class="gastro-title" data-i18n="gastro2_title">Chorsu 'Ovqat Bozori' (Il Vicolo del Cibo Fumante)</h3>
+            <p class="gastro-desc" data-i18n="gastro2_desc">
+              Dietro la cupola del mercato storico si trova il leggendario vicolo del cibo all'aperto: fumo aromatico di brace, spiedini shashlik succulenti marinati con cumino e coriandolo, caldo norin con finissimi tagliolini fatti a mano e morbido hanum al vapore con salsa speziata.
+            </p>
+            <ul class="gastro-details-list">
+              <li>🍢 Spiedini shashlik di montone e manzo cotti su brace viva</li>
+              <li>🍜 Norin tradizionale fatto con tagliolini freschissimi</li>
+            </ul>
           </div>
         </div>
+
+        <!-- Gastro 3: Tandir Bread Art (Real Photo) -->
+        <div class="gastro-card">
+          <div class="gastro-thumb">
+            <img src="assets/images/real/tandir_bread.jpg" alt="Pane caldo uzbeko nel forno tandir d'argilla" loading="lazy">
+          </div>
+          <div class="gastro-body">
+            <span class="gastro-tag" data-i18n="gastro3_tag">Tradizione Sacra & Forno d'Argilla</span>
+            <h3 class="gastro-title" data-i18n="gastro3_title">L'Arte del Pane Non nei Forni Tandir</h3>
+            <p class="gastro-desc" data-i18n="gastro3_desc">
+              Nelle tradizionali panetterie novvoyxona, il profumatissimo pane tondo uzbeko viene attaccato a mani nude sulle pareti ardenti dei forni d'argilla sotterranei. Decorato al centro con il timbro tradizionale chekich, il pane è sacro: si spezza rigorosamente con le mani senza toccarlo mai con il coltello.
+            </p>
+            <ul class="gastro-details-list">
+              <li>🥖 Pane tandir caldo e croccante appena sfornato</li>
+              <li>✋ Il rito dell'ospitalità uzbeka: spezzare il pane insieme</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Gastro 4: Traditional Choyxona Culture (Real Photo) -->
+        <div class="gastro-card">
+          <div class="gastro-thumb">
+            <img src="assets/images/real/shashlik_tashkent.jpg" alt="Shashlik e tavola imbandita in choyxona a Tashkent" loading="lazy">
+          </div>
+          <div class="gastro-body">
+            <span class="gastro-tag" data-i18n="gastro4_tag">L'Oasi della Casa del Tè</span>
+            <h3 class="gastro-title" data-i18n="gastro4_title">La Cultura della Choyxona Tradizionale</h3>
+            <p class="gastro-desc" data-i18n="gastro4_desc">
+              Il rito irrinunciabile della sosta pomeridiana sui comodi letti in legno rialzati (tapchan) coperti da ricami suzani. Si gusta il corroborante tè verde Kok-Choy accompagnato da zucchero cristallizzato navat, fragranti somsa sfogliate al forno e succulenti manti al vapore.
+            </p>
+            <ul class="gastro-details-list">
+              <li>🫖 Tè verde Kok-Choy servito nelle tradizionali ciotole piyola</li>
+              <li>🥟 Somsa sfogliata e croccante cotta al forno d'argilla</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Gastronomy Callout with Sardor -->
+      <div class="gastro-callout">
+        <div class="gastro-callout-text">
+          <h4 data-i18n="gastro_callout_title">Degustazioni Selezionate & Massima Sicurezza</h4>
+          <p data-i18n="gastro_callout_desc">Sardor vi consiglierà personalmente le specialità più gustose, accompagnandovi solo in locali storici e ristoranti accuratamente selezionati che rispettano standard impeccabili di freschezza, igiene e qualità.</p>
+        </div>
+        <a href="https://wa.me/998938850309?text=Buongiorno%20Sardor!%20Vorrei%20informazioni%20sulle%20esperienze%20gastronomiche%20e%20sul%20plov%20a%20Tashkent." target="_blank" class="btn btn-whatsapp" data-i18n="btn_whatsapp">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 15 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67Z"/></svg>
+          Scrivici su WhatsApp
+        </a>
       </div>
     </div>
   </section>
@@ -867,22 +1067,22 @@
         </div>
 
         <div class="footer-col">
-          <h4 data-i18n="footer_col_sights">Attrazioni di Tashkent</h4>
+          <h4 data-i18n="footer_col_sights">Esperienze a Tashkent</h4>
           <ul>
-            <li><a href="#attrazioni" data-i18n="sight_islamic_center_title">Centro Civiltà Islamica</a></li>
-            <li><a href="#attrazioni" data-i18n="sight_hazrat_title">Hazrati Imam & Corano VII sec.</a></li>
-            <li><a href="#attrazioni" data-i18n="sight_chorsu_title">Bazar Chorsu Storico</a></li>
-            <li><a href="#attrazioni" data-i18n="sight_plov_title">Besh Qozon & Plov Center</a></li>
+            <li><a href="#tours" data-i18n="tour1_title">Centro Civiltà Islamica & Hazrati Imam</a></li>
+            <li><a href="#tours" data-i18n="tour2_title">Bazar Chorsu & Città Vecchia</a></li>
+            <li><a href="#tours" data-i18n="tour3_title">Metropolitana d'Arte di Tashkent</a></li>
+            <li><a href="#tours" data-i18n="tour4_title">Moschea Bianca Minore al Tramonto</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
-          <h4 data-i18n="footer_col_tours">I Nostri Tour</h4>
+          <h4 data-i18n="nav_gastro">Gastronomia & Sapori</h4>
           <ul>
-            <li><a href="#tours" data-i18n="tour1_title">Tashkent Millenaria (1 Giorno)</a></li>
-            <li><a href="#tours" data-i18n="tour2_title">Metropolitana d'Arte (Mezza Giornata)</a></li>
-            <li><a href="#tours" data-i18n="tour3_title">Tour Notturno & Sapori (Serale)</a></li>
-            <li><a href="#custom-tour" data-i18n="nav_custom">Tour su Misura</a></li>
+            <li><a href="#gastronomia" data-i18n="gastro1_title">Besh Qozon (Centro del Plov)</a></li>
+            <li><a href="#gastronomia" data-i18n="gastro2_title">Chorsu 'Ovqat Bozori' Street Food</a></li>
+            <li><a href="#gastronomia" data-i18n="gastro3_title">Il Pane Non nei Forni Tandir</a></li>
+            <li><a href="#gastronomia" data-i18n="gastro4_title">La Tradizione della Choyxona</a></li>
           </ul>
         </div>
 
